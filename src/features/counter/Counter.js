@@ -7,6 +7,7 @@ import {
   incrementAsync,
   incrementIfOdd,
   square,
+  squareAsync,
   multiplyByAmount,
   selectCount,
   reset,
@@ -31,7 +32,10 @@ export function Counter() {
 
 
   return (
-    <div>
+    <div className={styles.myContainer}>
+      <h1>React-redux</h1>
+      <h2>counter test</h2>
+      <hr />
       <div className={styles.row}>
         <button
           className={styles.button}
@@ -99,6 +103,13 @@ export function Counter() {
             onClick = {() => dispatch(square())}>
               Square
         </button>
+        <button
+          className={styles.asyncButton}
+          onClick = {() => dispatch(squareAsync())}>
+            Square Async
+        </button>
+      </div>
+      <div className={styles.row}>
         <button
           className={styles.button}
           onClick={() => dispatch(reset())}>
